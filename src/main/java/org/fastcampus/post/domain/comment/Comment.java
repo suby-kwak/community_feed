@@ -2,6 +2,7 @@ package org.fastcampus.post.domain.comment;
 
 import org.fastcampus.common.domain.PositiveIntegerCounter;
 import org.fastcampus.post.domain.Post;
+import org.fastcampus.post.domain.content.CommentContent;
 import org.fastcampus.post.domain.content.Content;
 import org.fastcampus.user.domain.User;
 
@@ -32,6 +33,10 @@ public class Comment {
         this.author = author;
         this.content = content;
         this.likeCount = likeCount;
+    }
+
+    public Comment(Long id, Post post, User author, String content) {
+        this(id, post, author, new CommentContent(content), new PositiveIntegerCounter());
     }
 
     public void like(User user) {
