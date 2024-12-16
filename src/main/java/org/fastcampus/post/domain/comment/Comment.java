@@ -39,6 +39,26 @@ public class Comment {
         this(id, post, author, new CommentContent(content), new PositiveIntegerCounter());
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public Content getContent() {
+        return content;
+    }
+
+    public int getLikeCount() {
+        return likeCount.getCount();
+    }
+
     public void like(User user) {
         if (this.author.equals(user)) {
             throw new IllegalArgumentException();

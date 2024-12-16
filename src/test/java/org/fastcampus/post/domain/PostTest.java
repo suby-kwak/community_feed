@@ -1,7 +1,6 @@
 package org.fastcampus.post.domain;
 
 import org.fastcampus.post.domain.content.Content;
-import org.fastcampus.post.domain.content.PostPublicationState;
 import org.fastcampus.user.domain.User;
 import org.fastcampus.user.domain.UserInfo;
 import org.junit.jupiter.api.Test;

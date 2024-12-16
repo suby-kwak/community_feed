@@ -1,7 +1,5 @@
 package org.fastcampus.post.domain.content;
 
-import org.fastcampus.post.domain.common.DateTimeInfo;
-
 public abstract class Content {
     String contentText;
     final DateTimeInfo dateTimeInfo;
@@ -22,5 +20,9 @@ public abstract class Content {
 
     public String getContentText() {
         return contentText;
+    }
+
+    public boolean isEdited() {
+        return dateTimeInfo.isEdited();
     }
 }
