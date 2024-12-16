@@ -38,7 +38,7 @@ public class PostService {
         Post post = getPost(dto.postId());
         User user = userService.getUser(dto.userId());
 
-        post.updatePost(user, dto.content(), dto.state());
+        post.updatePost(user, dto.content());
         return postRepository.save(post);
     }
 

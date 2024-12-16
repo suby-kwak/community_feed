@@ -14,6 +14,26 @@ public class Post {
     private final PositiveIntegerCounter likeCount;
     private PostPublicationState state;
 
+    public Long getId() {
+        return id;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public Content getContent() {
+        return content;
+    }
+
+    public int getLikeCount() {
+        return likeCount.getCount();
+    }
+
+    public PostPublicationState getState() {
+        return state;
+    }
+
     public Post(Long id, User author, String content, PostPublicationState state) {
         if (author == null) {
             throw new IllegalArgumentException();
@@ -45,12 +65,15 @@ public class Post {
         likeCount.decrease();
     }
 
-    public void updatePost(User user, String updateContent, PostPublicationState state) {
+    public void updatePost(User user, String updateContent) {
         if (!this.author.equals(user)) {
             throw new IllegalArgumentException();
         }
 
-        this.state = state;
         this.content.updateContent(updateContent);
+    }
+
+    public void updateState(PostPublicationState state) {
+        this.state = state;
     }
 }

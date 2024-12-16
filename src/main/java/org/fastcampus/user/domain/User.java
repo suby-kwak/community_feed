@@ -43,6 +43,14 @@ public class User {
         followerCount.decrease();
     }
 
+    public int getFollowingCount() {
+        return followingCount.getCount();
+    }
+
+    public int getFollowerCount() {
+        return followerCount.getCount();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
