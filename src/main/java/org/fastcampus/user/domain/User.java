@@ -17,6 +17,14 @@ public class User {
         this.followerCount = new PositiveIntegerCounter();
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public UserInfo getInfo() {
+        return info;
+    }
+
     public void follow(User targetUser) {
         if (this.equals(targetUser)) {
             throw new IllegalArgumentException();

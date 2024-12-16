@@ -7,24 +7,37 @@ import org.fastcampus.user.domain.User;
 public class UserRelationService {
 
     private final UserRelationRepository userRelationRepository;
+    private final UserService userService;
 
-    public UserRelationService(UserRelationRepository userRelationRepository) {
+    public UserRelationService(UserRelationRepository userRelationRepository,
+        UserService userService) {
         this.userRelationRepository = userRelationRepository;
+        this.userService = userService;
     }
 
-    public void follow(RelationUserRequestDto dto) {
-        if (userRelationRepository.isAlreadyFollow(dto.following(), dto.follower())) {
+    public void followUser(RelationUserRequestDto dto) {
+        User following = userService.getUser(dto.followingId());
+        User follower = userService.getUser(dto.followerId());
+
+        if (userRelationRepository.isAlreadyFollow(following, follower)) {
             throw new IllegalArgumentException("이미 팔로우 상태입니다.");
         }
 
-        dto.following().follow(dto.follower());
+        following.follow(follower);
+
+        userRelationRepository.save(following, follower);
     }
 
-    public void unfollow(RelationUserRequestDto dto) {
-        if (!userRelationRepository.isAlreadyFollow(dto.following(), dto.follower())) {
+    public void unfollowUser(RelationUserRequestDto dto) {
+        User following = userService.getUser(dto.followingId());
+        User follower = userService.getUser(dto.followerId());
+
+        if (!userRelationRepository.isAlreadyFollow(following, follower)) {
             throw new IllegalArgumentException("팔로우 상태가 아닙니다.");
         }
 
-        dto.following().unfollow(dto.follower());
+        following.unfollow(follower);
+
+        userRelationRepository.delete(following, follower);
     }
 }
