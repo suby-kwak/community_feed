@@ -7,7 +7,6 @@ import org.fastcampus.post.application.interfaces.LikeRepository;
 import org.fastcampus.post.application.interfaces.PostRepository;
 import org.fastcampus.post.domain.Post;
 import org.fastcampus.user.application.UserService;
-import org.fastcampus.user.application.interfaces.UserRepository;
 import org.fastcampus.user.domain.User;
 
 public class PostService {
