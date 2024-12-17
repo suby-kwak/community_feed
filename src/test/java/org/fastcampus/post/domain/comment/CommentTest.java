@@ -62,7 +62,7 @@ public class CommentTest {
         comment.updateContent(author1, newContent);
 
         // then
-        assertEquals(newContent, comment.getContent().getContentText());
+        assertEquals(newContent, comment.getContent());
     }
 
     @Test

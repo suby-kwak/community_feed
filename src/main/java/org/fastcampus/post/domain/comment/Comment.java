@@ -51,8 +51,8 @@ public class Comment {
         return author;
     }
 
-    public Content getContent() {
-        return content;
+    public String getContent() {
+        return content.getContentText();
     }
 
     public int getLikeCount() {

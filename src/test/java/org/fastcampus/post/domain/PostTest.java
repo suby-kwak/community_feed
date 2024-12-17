@@ -51,8 +51,8 @@ public class PostTest {
         post1.updatePost(user1, newPostContent);
 
         // then
-        Content content = post1.getContent();
-        assertEquals(newPostContent, content.getContentText());
+        String content = post1.getContent();
+        assertEquals(newPostContent, content);
     }
 
     @Test
