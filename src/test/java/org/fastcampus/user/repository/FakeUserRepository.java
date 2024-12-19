@@ -10,7 +10,6 @@ public class FakeUserRepository implements UserRepository {
 
     private final Map<Long, User> repo = new HashMap<>();
 
-
     @Override
     public User save(User user) {
         if (user.getId() != null) {
@@ -24,7 +23,7 @@ public class FakeUserRepository implements UserRepository {
     }
 
     @Override
-    public Optional<User> findById(Long id) {
-        return Optional.ofNullable(repo.get(id));
+    public User findById(Long id) {
+        return repo.get(id);
     }
 }
