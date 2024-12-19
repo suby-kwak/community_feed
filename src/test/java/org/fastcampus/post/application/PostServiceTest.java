@@ -1,14 +1,12 @@
 package org.fastcampus.post.application;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.fastcampus.post.application.dto.CreatePostRequestDto;
 import org.fastcampus.post.application.dto.LikeRequestDto;
 import org.fastcampus.post.application.dto.UpdatePostRequestDto;
 import org.fastcampus.post.domain.Post;
 import org.fastcampus.post.domain.PostPublicationState;
-import org.fastcampus.post.domain.content.Content;
 import org.junit.jupiter.api.Test;
 
 public class PostServiceTest extends PostServiceTestTemplate{

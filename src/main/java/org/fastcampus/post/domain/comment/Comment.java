@@ -1,6 +1,5 @@
 package org.fastcampus.post.domain.comment;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import org.fastcampus.common.domain.PositiveIntegerCounter;
