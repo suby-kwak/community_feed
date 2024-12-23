@@ -7,7 +7,7 @@ POST http://localhost:8080/user
 Content-Type: application/json
 
 {
-    "userName" : "user4",
+    "userName" : "user3",
     "userProfileUrl" : ""
 }
 
@@ -16,7 +16,7 @@ POST http://localhost:8080/relation/follow
 Content-Type: application/json
 
 {
-  "followingId": 4,
+  "followingId": 1,
   "followerId": 3
 }
 
@@ -30,10 +30,10 @@ Content-Type: application/json
 }
 
 ### GET findFollowerCountById
-GET http://localhost:8080/user/3/following
+GET http://localhost:8080/user/1/following
 
 ### GET findFollowingCountById
-GET http://localhost:8080/user/4/follower
+GET http://localhost:8080/user/2/follower
 
 ### GET findUserProfileById
 GET http://localhost:8080/user/2
@@ -64,7 +64,7 @@ Content-Type: application/json
 
 {
   "postId": 1,
-  "authorId": 3,
+  "authorId": 2,
   "content": "이건 댓글입니다."
 }
 
