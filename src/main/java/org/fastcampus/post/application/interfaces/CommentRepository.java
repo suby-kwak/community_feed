@@ -7,6 +7,6 @@ public interface CommentRepository {
 
     Comment save(Comment comment);
 
-    Optional<Comment> findById(Long id);
+    Comment findById(Long id);
 
 }

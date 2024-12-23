@@ -37,3 +37,69 @@ GET http://localhost:8080/user/4/follower
 
 ### GET findUserProfileById
 GET http://localhost:8080/user/2
+
+### POST createPost
+POST http://localhost:8080/post
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "content": "글쓰기 테스트",
+  "state": "PUBLIC"
+}
+
+### PATCH updatePost
+PATCH http://localhost:8080/post/1
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "content": "글쓰기 수정 테스트1",
+  "state": "PUBLIC"
+}
+
+### POST createComment
+POST http://localhost:8080/comment
+Content-Type: application/json
+
+{
+  "postId": 1,
+  "authorId": 3,
+  "content": "이건 댓글입니다."
+}
+
+### POST likePost
+POST http://localhost:8080/post/like
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}
+
+### POST unlikePost
+POST http://localhost:8080/post/unlike
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}
+
+### POST likeComment
+POST http://localhost:8080/comment/like
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}
+
+### POST unlikeComment
+POST http://localhost:8080/comment/unlike
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}

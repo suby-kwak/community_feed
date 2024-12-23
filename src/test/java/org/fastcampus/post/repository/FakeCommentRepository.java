@@ -25,7 +25,7 @@ public class FakeCommentRepository implements CommentRepository {
     }
 
     @Override
-    public Optional<Comment> findById(Long id) {
-        return Optional.ofNullable(repo.get(id));
+    public Comment findById(Long id) {
+        return repo.get(id);
     }
 }
