@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
   "followingId": 1,
-  "followerId": 3
+  "followerId": 2
 }
 
 ### POST unfollowCheck
@@ -26,7 +26,7 @@ Content-Type: application/json
 
 {
   "followingId": 1,
-  "followerId": 3
+  "followerId": 2
 }
 
 ### GET findFollowerCountById
@@ -43,7 +43,7 @@ POST http://localhost:8080/post
 Content-Type: application/json
 
 {
-  "userId": 1,
+  "userId": 2,
   "content": "글쓰기 테스트",
   "state": "PUBLIC"
 }
@@ -64,8 +64,8 @@ Content-Type: application/json
 
 {
   "postId": 1,
-  "authorId": 2,
-  "content": "이건 댓글입니다."
+  "authorId": 3,
+  "content": "이건 댓글입니다.3"
 }
 
 ### POST likePost
@@ -73,8 +73,8 @@ POST http://localhost:8080/post/like
 Content-Type: application/json
 
 {
-  "id": 1,
-  "userId": 3
+  "id": 2,
+  "userId": 1
 }
 
 ### POST unlikePost
@@ -103,3 +103,9 @@ Content-Type: application/json
   "id": 1,
   "userId": 3
 }
+
+### GET userFeedCheck
+GET http://localhost:8080/feed/post/1
+
+### GET postCommentListCheck
+GET http://localhost:8080/feed/comment/1
