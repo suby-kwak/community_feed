@@ -1,0 +1,111 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+### POST createUser
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+    "userName" : "user3",
+    "userProfileUrl" : ""
+}
+
+### POST followCheck
+POST http://localhost:8080/relation/follow
+Content-Type: application/json
+
+{
+  "followingId": 1,
+  "followerId": 2
+}
+
+### POST unfollowCheck
+POST http://localhost:8080/relation/unfollow
+Content-Type: application/json
+
+{
+  "followingId": 1,
+  "followerId": 2
+}
+
+### GET findFollowerCountById
+GET http://localhost:8080/user/1/following
+
+### GET findFollowingCountById
+GET http://localhost:8080/user/2/follower
+
+### GET findUserProfileById
+GET http://localhost:8080/user/2
+
+### POST createPost
+POST http://localhost:8080/post
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "content": "글쓰기 테스트",
+  "state": "PUBLIC"
+}
+
+### PATCH updatePost
+PATCH http://localhost:8080/post/1
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "content": "글쓰기 수정 테스트1",
+  "state": "PUBLIC"
+}
+
+### POST createComment
+POST http://localhost:8080/comment
+Content-Type: application/json
+
+{
+  "postId": 1,
+  "authorId": 3,
+  "content": "이건 댓글입니다.3"
+}
+
+### POST likePost
+POST http://localhost:8080/post/like
+Content-Type: application/json
+
+{
+  "id": 2,
+  "userId": 1
+}
+
+### POST unlikePost
+POST http://localhost:8080/post/unlike
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}
+
+### POST likeComment
+POST http://localhost:8080/comment/like
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}
+
+### POST unlikeComment
+POST http://localhost:8080/comment/unlike
+Content-Type: application/json
+
+{
+  "id": 1,
+  "userId": 3
+}
+
+### GET userFeedCheck
+GET http://localhost:8080/feed/1
+
+### GET postCommentListCheck
+GET http://localhost:8080/feed/comment/1
