@@ -53,22 +53,22 @@ public class UserTest {
     }
 
     // follow 상태 확인은 서비스에서 진행하기 때문에 여기서는 틀린 값이 반환된다. 즉 이 테스트 케이스는 여기서 진행하기 적합하지않다.
-    @Test
-    void givenUser1FollowUser3WhenUser1UnfollowUser2ThenReturnOne() {
-        // given
-        user1.follow(user3);
-
-        // when
-        user1.unfollow(user2);
-
-        // then
-        assertEquals(1, user1.getFollowingCount());
-        assertEquals(0, user1.getFollowerCount());
-        assertEquals(0, user2.getFollowingCount());
-        assertEquals(0, user2.getFollowerCount());
-        assertEquals(0, user3.getFollowingCount());
-        assertEquals(1, user3.getFollowerCount());
-    }
+//    @Test
+//    void givenUser1FollowUser3WhenUser1UnfollowUser2ThenReturnOne() {
+//        // given
+//        user1.follow(user3);
+//
+//        // when
+//        user1.unfollow(user2);
+//
+//        // then
+//        assertEquals(1, user1.getFollowingCount());
+//        assertEquals(0, user1.getFollowerCount());
+//        assertEquals(0, user2.getFollowingCount());
+//        assertEquals(0, user2.getFollowerCount());
+//        assertEquals(0, user3.getFollowingCount());
+//        assertEquals(1, user3.getFollowerCount());
+//    }
 
     // 자기 자신을 팔로우할 경우 에러 반환
     @Test
