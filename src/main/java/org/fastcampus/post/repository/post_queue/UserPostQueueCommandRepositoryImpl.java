@@ -35,10 +35,10 @@ public class UserPostQueueCommandRepositoryImpl implements UserPostQueueCommandR
     @Override
     @Transactional
     public void saveFollowPost(Long userId, Long targetId) {
-        List<Long> postIdList = jpaPostRepository.findAllPostIdsByAuthorId(targetId);
+        List<PostEntity> postIdList = jpaPostRepository.findAllPostIdsByAuthorId(targetId);
 
         List<UserPostQueueEntity> userPostQueueEntityList = postIdList.stream()
-            .map(postId -> new UserPostQueueEntity(userId, postId, targetId))
+            .map(post -> new UserPostQueueEntity(userId, post.getId(), targetId))
             .toList();
 
         jpaUserPostQueueRepository.saveAll(userPostQueueEntityList);

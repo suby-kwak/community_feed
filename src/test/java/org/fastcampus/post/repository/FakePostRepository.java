@@ -2,7 +2,6 @@ package org.fastcampus.post.repository;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import org.fastcampus.post.application.interfaces.PostRepository;
 import org.fastcampus.post.domain.Post;
 

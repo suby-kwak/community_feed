@@ -107,5 +107,5 @@ Content-Type: application/json
 ### GET userFeedCheck
 GET http://localhost:8080/feed/1
 
-### GET postCommentListCheck
-GET http://localhost:8080/feed/comment/1
+### GET CommentListCheck
+GET http://localhost:8080/comment/post/1
