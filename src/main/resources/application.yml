@@ -13,3 +13,5 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: true
+
+secret-key : ThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKeyThisIsSecretKey

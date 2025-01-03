@@ -7,9 +7,7 @@ import java.util.Map;
 import org.fastcampus.post.application.interfaces.CommentRepository;
 import org.fastcampus.post.domain.comment.Comment;
 import org.fastcampus.post.repository.entity.comment.CommentEntity;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public class FakeCommentRepository implements CommentRepository {
 
     private final Map<Long, Comment> repo = new HashMap<>();
