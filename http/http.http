@@ -109,3 +109,13 @@ GET http://localhost:8080/feed/1
 
 ### GET CommentListCheck
 GET http://localhost:8080/comment/post/1
+
+### POST likePostIdempotent
+POST http://localhost:8080/post/like
+Idempotency-Key: "12345"
+Content-Type: application/json
+
+{
+  "id": 2,
+  "userId": 7
+}
