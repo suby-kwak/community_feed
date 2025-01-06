@@ -1,13 +1,13 @@
 package org.fastcampus.post.repository;
 
 import java.util.List;
-import lombok.RequiredArgsConstructor;
 import org.fastcampus.post.repository.entity.post.PostEntity;
 import org.fastcampus.post.repository.post_queue.UserQueueRedisRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RequiredArgsConstructor
+@Profile({"!test"})
 public class UserQueueRedisRepositoryImpl implements UserQueueRedisRepository {
 
     @Override
