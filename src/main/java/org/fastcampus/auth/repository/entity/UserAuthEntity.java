@@ -3,6 +3,7 @@ package org.fastcampus.auth.repository.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class UserAuthEntity {
     private String password;
     private String role;
     private Long userId;
+    private LocalDateTime lastLoginDt;
 
     public UserAuthEntity(UserAuth userAuth, Long userId) {
         this.email = userAuth.getEmail();
@@ -30,6 +32,10 @@ public class UserAuthEntity {
 
     public UserAuth toUserAuth() {
         return new UserAuth(email, password, role, userId);
+    }
+
+    public void updateLastLoginAt() {
+        lastLoginDt = LocalDateTime.now();
     }
 
 }

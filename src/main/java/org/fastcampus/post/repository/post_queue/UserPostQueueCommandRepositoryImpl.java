@@ -18,6 +18,7 @@ public class UserPostQueueCommandRepositoryImpl implements UserPostQueueCommandR
     private final JpaPostRepository jpaPostRepository;
     private final JpaUserRelationRepository jpaUserRelationRepository;
     private final JpaUserPostQueueRepository jpaUserPostQueueRepository;
+//    private final UserQueueRedisRepository redisRepository;
 
     @Override
     @Transactional
@@ -30,6 +31,7 @@ public class UserPostQueueCommandRepositoryImpl implements UserPostQueueCommandR
             .toList();
 
         jpaUserPostQueueRepository.saveAll(userPostQueueEntityList);
+//        redisRepository.publishPostToFollowingUserList(postEntity, followersIds);
     }
 
     @Override
@@ -42,11 +44,13 @@ public class UserPostQueueCommandRepositoryImpl implements UserPostQueueCommandR
             .toList();
 
         jpaUserPostQueueRepository.saveAll(userPostQueueEntityList);
+//        redisRepository.publishPostListToFollowerUser(postIdList, userId);
     }
 
     @Override
     @Transactional
     public void deleteUnfollowPost(Long userId, Long targetId) {
         jpaUserPostQueueRepository.deleteAllByUserIdAndAuthorId(userId, targetId);
+//        redisRepository.deleteFeed(userId, targetId);
     }
 }
